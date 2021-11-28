@@ -5,10 +5,12 @@ const CartProducts = () => {
   const cartProducts = useSelector((state) => state.cartProducts);
 
   return (
-    <>
+    <main>
       <h1>Cart Products</h1>
-      <Products products={cartProducts} />
-    </>
+      <section>
+        <Products products={cartProducts} />  
+      </section>
+    </main>
   );
 };
 
