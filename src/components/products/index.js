@@ -1,18 +1,18 @@
-import { useState } from "react";
 import { Product } from "../product";
-import productsJson from "../../json/products.json";
 import { CartProductsCounter } from "../cart-products-counter";
 import styled from "styled-components";
 
-const Products = () => {
-  const [products] = useState(productsJson.data);
-
+const Products = ({ products }) => {
   return (
     <Section>
       <ul>
-        {products.map((product, index) => (
-          <Product key={index} name={product.name} price={product.price} />
-        ))}
+        {products.length > 0 ? (
+          products.map((product, index) => (
+            <Product key={index} name={product.name} price={product.price} />
+          ))
+        ) : (
+          <li>Nenhum produto encontrado</li>
+        )}
       </ul>
 
       {/* <CartProductsCounter /> */}
@@ -22,8 +22,8 @@ const Products = () => {
 
 const Section = styled.section`
   display: flex;
-  
-  background-color: #1E1D2B;
+
+  background-color: #1e1d2b;
   color: #ffffff;
   padding: 20px 30px;
   min-height: calc(100vh - 77px);

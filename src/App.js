@@ -1,16 +1,23 @@
 import { Provider } from "react-redux";
 import { Header } from "./components/header";
-import { Products } from "./components/products";
 import store from "./store/store";
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Home } from "./pages/home";
+import { CartProducts } from './pages/cart-products'
 
 function App() {
   return (
     <>
-      <GlobalStyle />
       <Provider store={store}>
-        <Header />
-        <Products />
+        <GlobalStyle />
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/cart-products" element={<CartProducts />} />
+          </Routes>
+        </BrowserRouter>
       </Provider>
     </>
   );
@@ -21,6 +28,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
-`
+`;
 
 export default App;

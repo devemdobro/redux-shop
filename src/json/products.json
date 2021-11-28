@@ -9,6 +9,11 @@
             "id": 2,
             "name": "Poção de vida",
             "price": 2.99
+        },
+        {
+            "id": 2,
+            "name": "Sanduíche revigorante",
+            "price": 29.99
         }
     ]
 }
