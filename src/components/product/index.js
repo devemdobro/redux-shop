@@ -42,6 +42,7 @@ const ListItem = styled.li`
       border: none;
       background-color: #ff7272;
       color: #ffffff;
+      cursor: pointer;
   }
 `;
 
